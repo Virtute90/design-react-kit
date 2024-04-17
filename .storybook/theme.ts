@@ -12,6 +12,10 @@ const theme = create({
   appBorderColor: 'grey',
   appBorderRadius: 4,
 
+  // Fonts
+  fontBase: '"Titillium Web", "Geneva", "Tahoma", "sans-serif"',
+  fontCode: '"Roboto Mono", "monospace"',
+
   brandTitle: 'Design React Kit',
   brandUrl: 'https://github.com/italia/design-react-kit'
 });
