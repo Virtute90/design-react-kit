@@ -1,6 +1,14 @@
 module.exports = {
-  extends: ['react-app', 'plugin:storybook/recommended'],
-  ignorePatterns: ['stories/**/*.mdx'],
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:storybook/recommended'
+  ],
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parser: '@typescript-eslint/parser',
   overrides: [
     {
       // or whatever matches stories specified in .storybook/main.js
@@ -12,10 +20,5 @@ module.exports = {
         'storybook/default-exports': 'off'
       }
     }
-  ],
-  settings: {
-    react: {
-      version: 'detect'
-    }
-  }
+  ]
 };
