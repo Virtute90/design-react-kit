@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 const black = '#000';
 const primary = '#06c';
 const primaryDark = '#435a70';

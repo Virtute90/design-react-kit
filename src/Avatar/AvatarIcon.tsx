@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes, ElementType, Ref } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, FC, HTMLAttributes, Ref } from 'react';
 
 export interface AvatarIconProps extends HTMLAttributes<HTMLElement> {
   /**
@@ -23,6 +23,7 @@ export interface AvatarIconProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const AvatarIcon: FC<AvatarIconProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   tag = 'div',
   size = 'md',

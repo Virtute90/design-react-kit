@@ -1,16 +1,15 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import type { Meta, StoryObj } from '@storybook/react';
 import React, { useRef, useState } from 'react';
 import { Button, Tooltip, UncontrolledTooltip } from '../../src';
 
 const meta: Meta<typeof Tooltip> = {
-  title: "Documentazione/Componenti/Tooltip",
+  title: 'Documentazione/Componenti/Tooltip',
   component: Tooltip,
   parameters: {
     docs: {
-      canvas: { sourceState: "none" },
-    },
-  },
+      canvas: { sourceState: 'none' }
+    }
+  }
 };
 
 export default meta;
@@ -73,7 +72,7 @@ const EsempiWithHooks = () => {
       </UncontrolledTooltip>
     </div>
   );
-}
+};
 
 export const Esempi: Story = {
   render: () => <EsempiWithHooks />
@@ -139,11 +138,10 @@ const EsempiConControlloWithHooks = () => {
       </Tooltip>
     </div>
   );
-}
+};
 export const EsempiConControllo: Story = {
   render: () => <EsempiConControlloWithHooks />
 };
-
 
 const PosizioniWithHooks = () => {
   const ref1 = useRef(null);
@@ -187,12 +185,13 @@ const PosizioniWithHooks = () => {
       </UncontrolledTooltip>
     </div>
   );
-}
+};
 
 export const Posizioni: Story = {
   render: () => <PosizioniWithHooks />
 };
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const EsempiInterattiviWithHooks = (x: any) => {
   const ref = useRef(null);
   return (
@@ -205,13 +204,13 @@ const EsempiInterattiviWithHooks = (x: any) => {
         {x.text}
       </UncontrolledTooltip>
     </div>
-  )
-}
+  );
+};
 
 export const EsempiInterattivi: Story = {
   render: (placement, text) => <EsempiInterattiviWithHooks {...placement} {...text} />,
   parameters: {
-    layout: "centered",
+    layout: 'centered'
   },
   args: {
     placement: 'top',
@@ -222,6 +221,5 @@ export const EsempiInterattivi: Story = {
       control: 'select',
       options: ['top', 'bottom', 'left', 'right']
     }
-
   }
 };

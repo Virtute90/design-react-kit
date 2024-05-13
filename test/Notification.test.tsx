@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
 import { act, fireEvent, Matcher, render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import React from 'react';
 
@@ -170,7 +170,7 @@ describe('Notifications', () => {
       expect(onClose).toHaveBeenCalled();
     });
 
-    describe('local overrides', () => { });
+    describe('local overrides', () => {});
   });
 
   describe('Notification content', () => {
@@ -211,7 +211,7 @@ describe('Notifications', () => {
       render(<NotificationManager duration={500} />);
 
       act(() => {
-        // @ts-expect-error
+        // @ts-expect-error Descrizione possibile errore?!
         notify('coucou1', 'Notification body', { state: 'invalid-state' });
       });
 
@@ -219,6 +219,6 @@ describe('Notifications', () => {
       await expect(screen.findAllByRole('img')).rejects.toThrowError();
     });
 
-    it('should apply a state styling and relative icon when set', () => { });
+    it('should apply a state styling and relative icon when set', () => {});
   });
 });

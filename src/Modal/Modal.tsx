@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import classnames from 'classnames';
 import React, { FC, HTMLAttributes } from 'react';
 import { FadeProps, Modal as InnerModal } from 'reactstrap';
 import { CSSModule } from 'reactstrap/types/lib/utils';
-import classnames from 'classnames';
 
 export interface ModalProps extends HTMLAttributes<HTMLElement> {
   [key: string]: any;

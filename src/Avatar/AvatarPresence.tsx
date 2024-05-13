@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes, ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, FC, HTMLAttributes } from 'react';
 
 export interface AvatarPresenceProps extends HTMLAttributes<HTMLElement> {
   /** Utilizzarlo in caso di utilizzo di componenti personalizzati */
@@ -12,6 +12,7 @@ export interface AvatarPresenceProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const AvatarPresence: FC<AvatarPresenceProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   tag = 'div',
   presence,

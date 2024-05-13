@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import classNames from 'classnames';
 import React, { FC, HTMLAttributes } from 'react';
 import { CSSModule } from 'reactstrap/types/lib/utils';
-import classNames from 'classnames';
 import { Icon } from '../Icon/Icon';
 import { mapToCssModules } from '../utils';
 
@@ -25,7 +26,6 @@ export const ModalHeader: FC<ModalHeaderProps> = ({
   icon,
   className,
   children,
-  Util,
   toggle,
   tag: Tag = 'h5',
   wrapTag: WrapTag = 'div',

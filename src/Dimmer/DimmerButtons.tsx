@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes } from 'react';
 import classNames from 'classnames';
+import React, { FC, HTMLAttributes } from 'react';
 
 export interface DimmerButtonsProps extends HTMLAttributes<HTMLElement> {
   /** Le varianti di colore definite in Bootstrap Italia per il componente Dimmer */
@@ -16,6 +16,7 @@ export interface DimmerButtonsProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const DimmerButtons: FC<DimmerButtonsProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   color,
   className,
   single = false,

@@ -33,6 +33,7 @@ export const useSizeDetector = ({
     root == null ||
     (hasWindow && (isHorizontal ? window.innerWidth < root.clientWidth : window.innerHeight < root.clientHeight));
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const scrollEnd = useCallback(
     debounce(() => {
       setForceRecompute(true);

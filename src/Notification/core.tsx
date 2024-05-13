@@ -1,7 +1,7 @@
 import { ReactChild } from 'react';
 import { toast } from 'react-toastify';
-import { createNotification } from './NotificationContent';
 import type { NotificationOptions } from './NotificationContent';
+import { createNotification } from './NotificationContent';
 import { NotificationId } from './types';
 
 export function notify(title: string, options?: NotificationOptions): NotificationId;
@@ -13,7 +13,7 @@ export function notify(
   bodyOrOptions?: ReactChild | NotificationOptions,
   options?: NotificationOptions
 ): NotificationId {
-  let body: ReactChild | undefined = isReactChild(bodyOrOptions) ? bodyOrOptions : undefined;
+  const body: ReactChild | undefined = isReactChild(bodyOrOptions) ? bodyOrOptions : undefined;
   const safeOptions = isReactChild(bodyOrOptions) ? { ...options } : bodyOrOptions || {};
   const NotificationContent = createNotification(title, body, safeOptions);
   const internalOptions = {

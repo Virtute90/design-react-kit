@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes, ElementType } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, FC, HTMLAttributes } from 'react';
 
 export interface AvatarGroupContainerProps extends HTMLAttributes<HTMLUListElement> {
   /** Utilizzarlo in caso di utilizzo di componenti personalizzati */
@@ -12,6 +12,7 @@ export interface AvatarGroupContainerProps extends HTMLAttributes<HTMLUListEleme
 }
 
 export const AvatarGroupContainer: FC<AvatarGroupContainerProps> = ({
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   className,
   tag = 'ul',
   wrapperClassName,

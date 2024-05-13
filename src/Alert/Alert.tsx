@@ -1,5 +1,5 @@
-import React, { FC, HTMLAttributes, MouseEventHandler, ElementType, Ref } from 'react';
-import { Alert as InnerAlert, FadeProps } from 'reactstrap';
+import React, { ElementType, FC, HTMLAttributes, MouseEventHandler, Ref } from 'react';
+import { FadeProps, Alert as InnerAlert } from 'reactstrap';
 import { CSSModule } from 'reactstrap/types/lib/utils';
 
 // Copy over from reactstrap and add new ones
@@ -18,6 +18,7 @@ export interface AlertProps extends HTMLAttributes<HTMLElement> {
   /** Da utilizzare per impostare un riferimento all'elemento DOM */
   innerRef?: Ref<HTMLElement>;
   isOpen?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   toggle?: MouseEventHandler<any>;
   testId?: string;
 }

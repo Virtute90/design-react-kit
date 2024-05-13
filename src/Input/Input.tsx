@@ -1,21 +1,22 @@
-import React, {
-  InputHTMLAttributes,
-  ElementType,
-  Ref,
-  ReactNode,
-  useCallback,
-  useState,
-  useRef,
-  useEffect
-} from 'react';
+/* eslint-disable prefer-const */
 import isNumber from 'is-number';
+import React, {
+  ElementType,
+  InputHTMLAttributes,
+  ReactNode,
+  Ref,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 
-import { InputContainer } from './InputContainer';
-import { Icon } from '../Icon/Icon';
-import { getTag, getFormControlClass, getClasses, getValidationTextControlClass, useFocus } from './utils';
-import type { CSSModule } from 'reactstrap/types/lib/utils';
-import { notifyDeprecation } from '../utils';
 import classNames from 'classnames';
+import type { CSSModule } from 'reactstrap/types/lib/utils';
+import { Icon } from '../Icon/Icon';
+import { notifyDeprecation } from '../utils';
+import { InputContainer } from './InputContainer';
+import { getClasses, getFormControlClass, getTag, getValidationTextControlClass, useFocus } from './utils';
 
 // taken from reactstrap types
 type InputType =
@@ -266,7 +267,7 @@ export const Input = ({
   }
 
   const clickIncrDecr = (mode: number) => {
-    var step = parseFloat(inputRef.current?.step ? inputRef.current.step : '1');
+    let step = parseFloat(inputRef.current?.step ? inputRef.current.step : '1');
     const min = parseFloat(inputRef.current?.min ? inputRef.current.min : 'Nan');
     const max = parseFloat(inputRef.current?.max ? inputRef.current.max : 'Nan');
     step = isNaN(step) ? 1 : step;
@@ -279,7 +280,7 @@ export const Input = ({
     }
     const nativeInputValueSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set;
     nativeInputValueSetter?.call(inputRef.current, `${newValue}`);
-    var ev2 = new Event('input', { bubbles: true });
+    const ev2 = new Event('input', { bubbles: true });
     inputRef.current?.dispatchEvent(ev2);
   };
 

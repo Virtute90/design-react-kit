@@ -1,11 +1,11 @@
-import React, { ElementType, useCallback, useState } from 'react';
 import classNames from 'classnames';
+import React, { ElementType, useCallback, useState } from 'react';
 import { Transition } from 'react-transition-group';
 
-import { pick, omit } from '../utils';
-import { TransitionTimeouts, TransitionsKeys } from '../transitions';
 import type { TransitionProps } from 'react-transition-group/Transition';
 import type { TransitionStates } from '../transitions';
+import { TransitionTimeouts, TransitionsKeys } from '../transitions';
+import { omit, pick } from '../utils';
 
 export type AccordionBodyProps = Partial<TransitionProps> & {
   tag?: ElementType;
@@ -47,39 +47,39 @@ export const AccordionBody = ({
       setHeight(getHeight(node));
       attributes.onEntering?.(node, isAppearing);
     },
-    [attributes.onEntering]
+    [attributes]
   );
   const onEntered = useCallback(
     (node: HTMLElement, isAppearing: boolean) => {
       setHeight(null);
       attributes.onEntered?.(node, isAppearing);
     },
-    [attributes.onEntered]
+    [attributes]
   );
   const onExit = useCallback(
     (node: HTMLElement) => {
       setHeight(getHeight(node));
       attributes.onExit?.(node);
     },
-    [attributes.onExit]
+    [attributes]
   );
   const onExiting = useCallback(
     (node: HTMLElement) => {
       // getting this variable triggers a reflow
-      // @ts-expect-error
+      // @ts-expect-error const viene usata?!
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const _unused = node.offsetHeight;
       setHeight(0);
       attributes.onExiting?.(node);
     },
-    [attributes.onExiting]
+    [attributes]
   );
   const onExited = useCallback(
     (node: HTMLElement) => {
       setHeight(null);
       attributes.onExited?.(node);
     },
-    [attributes.onExited]
+    [attributes]
   );
   const Tag = tag;
 

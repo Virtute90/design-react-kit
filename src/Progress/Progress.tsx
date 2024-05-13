@@ -1,6 +1,6 @@
-import React, { FC, HTMLAttributes, ElementType } from 'react';
 import classNames from 'classnames';
 import isNumber from 'is-number';
+import React, { ElementType, FC, HTMLAttributes } from 'react';
 import { logError } from '../utils';
 
 export interface ProgressProps extends HTMLAttributes<HTMLElement> {
@@ -62,7 +62,7 @@ export const Progress: FC<ProgressProps> = ({
           <div
             {...attributes}
             className={classes}
-            role='progressbar'
+            role={role}
             style={{ width: numericValue + '%' }}
             aria-valuenow={numericValue}
             aria-valuemin={0}
